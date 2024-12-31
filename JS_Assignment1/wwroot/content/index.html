@@ -1,0 +1,677 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <script src="JS/myscript.js"></script>
+    <link href="CSS/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <title></title>
+    <style>
+        /*body{
+            font-family:'Century Schoolbook';
+            font-size : 12px;
+        }*/
+       h4{
+            color:black;
+        }
+        .div-1{
+            background-color:white;
+        }
+        span,label {
+            font-family:'Arial Rounded MT';
+            font-size : 17px;
+            color:black;
+        }
+      
+        #yr_txt, #yr_txt1 {
+            color: black;
+            font: bold 19px;
+        }
+
+   </style>
+</head>
+
+<body id="body">
+<hr />
+<h3 style="text-align: center;  color: white; background-color: black">JAVASCRIPT ASSIGNMENT</h3>
+ 
+<div id ="div-main">
+    
+    <div class="div-1">
+        <span></span>
+        <span></span>
+        <span></span><hr />
+    </div>
+   
+    <!-- exercise-1 html tags -->
+    <div class="div-1">
+        <h4>&nbsp;&nbsp;Exercise - 1</h4><br />
+        &nbsp;<label>Current Date & Time :</label>
+        <span id="day_p"></span>
+        <span id="date_p"></span>
+        <span id="time_p"></span><hr />
+    </div>
+
+    <!-- exercise-2 html tags -->
+    <div class="div-1">
+        <h4>&nbsp;&nbsp;Exercise - 2 [Leap Year Calendar]</h4>
+        &nbsp;<label> Year : </label> <input id="yr_txt" type="text" /> &nbsp;
+        <button class="btn btn-secondary active btn=lg" onclick="calculate_LeapYr()">CHECK</button>
+        <br /><hr />
+    </div>
+    
+    <!-- exercise-3 html tags -->
+    <div class="div-1">
+        <h4>&nbsp;&nbsp;Exercise- 3 [ 1st of January = Sunday? ]</h4>
+        &nbsp;<label> Year : </label> <input id="yr_txt1" type="text" />&nbsp;
+        <button class="btn btn-secondary active btn=lg" onclick="Check_Sunday()">CHECK</button>
+        &nbsp;&nbsp;
+        <label> Result : &nbsp;</label><span id="result"></span>
+        <br /><hr />
+    </div>
+
+    <!-- exercise-4 html tags -->
+    <div class="div-1">
+        <h4>&nbsp;&nbsp;Exercise 4 [Guessing Game]</h4>
+        &nbsp;<label>Enter Number [Range 1-1000] </label>&nbsp;
+        <input id="number1" type="text" />
+        <button class="btn btn-secondary active btn=lg" onclick="Check()">CHECK</button>
+        <span id="ex-4"></span>
+        <br /><hr />
+    </div>
+    
+    <!-- exercise-5 html tags -->
+    <div class="div-1">
+        <h4>&nbsp;&nbsp;Exercise-5 [Days until Christmas]</h4>
+        &nbsp;<span id="ex-5"></span><br /><hr />
+    </div>
+
+    <!-- exercise-6 html tags -->
+    <div class="div-1">
+        <h4>&nbsp;&nbsp;Exercise - 6 [Reverse Input]</h4>
+        <label>&nbsp;Enter String : </label> <input id="ex6_txt" type="text" />
+        <button class="btn btn-secondary active btn=lg" onclick="reverse()" id="ex6_btn">TO REVERSE</button>
+        <label>&nbsp;Reversed String : &nbsp;</label><span id="ex-6"></span>
+        <br /><hr />
+    </div>
+
+    <!-- exercise-7 html tags -->
+    <div class="div-1">
+        <h4>&nbsp;&nbsp;Exercise - 7 [Text manipulation - 1]</h4>
+        <label>&nbsp;Enter String : </label> <input id="ex7_txt" type="text" />
+        <button class="btn btn-secondary active btn=lg" onclick="manipulate()" id="ex7_btn">MANIPULATE</button>
+        <label>&nbsp;Manipulated String :  &nbsp;</label><span id="ex-7"></span>
+        <br /><hr />
+    </div>
+
+    <!-- exercise-8 html tags -->
+    <div class="div-1">
+        <h4>&nbsp;&nbsp;Exercise - 8 [Text manipulation - 2 ]</h4>
+        <label>&nbsp;Enter String : </label> <input id="ex8_txt" type="text" />&nbsp;
+        <button class="btn btn-secondary active btn=lg" onclick="alpha_order()" id="ex8_btn">MANIPULATE</button>
+        <label>&nbsp;Alphabetical Order : &nbsp;</label> <span id="ex-8"></span>
+        <span id="ex-8"></span> <br /><hr />
+    </div>
+
+    <!-- exercise-9 html tags -->
+    <div class="div-1">
+        <h4>&nbsp;&nbsp;Exercise - 9 [Text manipulation - 3]</h4>
+        <label>&nbsp;Enter String :</label> <input id="ex9_txt" type="text" />&nbsp;
+        <button class="btn btn-secondary active btn=lg" onclick="manipulate_txt()" id="ex9_btn">MANIPULATE</button>
+        <br />
+        <label>&nbsp;Manipulated String : &nbsp;</label> <span id="ex-9-1"></span><br />
+        <label>&nbsp;The longest word is : &nbsp;</label> <span id="ex-9"></span>
+        <span id="ex-9-2"></span><br /><hr />
+    </div>
+
+    <!-- exercise-10 html tags -->
+    <div class="div-1">
+        <h4>&nbsp;&nbsp;Exercise 10 – Prime Number</h4>
+        <label>&nbsp;Enter Number :</label> <input id="ex10_txt" type="text" />
+        <button class="btn btn-secondary active btn=lg" onclick="prime_check()" id="ex10_btn">CHECK</button>
+        <label>&nbsp;Result : &nbsp;</label><span id="ex-10"></span>
+        <br /><hr />
+    </div>
+
+    <!-- exercise-11 html tags -->
+    <div class="div-1">
+        <h4>&nbsp;&nbsp;Exercise - 11 [Type]</h4>
+        <label>&nbsp;Input : </label> <input id="ex11_txt" type="text" />
+        <button class="btn btn-secondary active btn=lg" onclick="check_type()" id="ex11_btn">CHECK TYPE</button>
+        <label>&nbsp;Value Type : </label><span id="ex-11"></span>
+        <span id="ex-11"></span><br /><hr />
+    </div>
+
+    <!-- exercise-12 html tags -->
+    <div class="div-1">
+        <h4>&nbsp;&nbsp;Exercise - 12 [If loop statement - 1]</h4>
+        <label>&nbsp;Iteration [0-15] :</label><br />
+        &nbsp;<span id="ex-12"></span><br /><hr />
+    </div>
+
+    <!-- exercise-13 html tags -->
+    <div class="div-1">
+        <h4>&nbsp;&nbsp;Exercise - 13 [If loop statement - 2]</h4>
+        <label>&nbsp;First 10 Happy Numbers :&nbsp;</label><span id="ex-13-1"></span><br />
+        &nbsp;&nbsp;
+        <button class="btn btn-secondary active btn=lg" onclick="Find_Happy_Numbers()">Find Happy Numbers</button>
+        <hr />
+    </div>
+
+    <!-- exercise-14 html tags -->
+    <div class="div-1">
+        <h4>&nbsp;&nbsp;Exercise - 14 [Array - 1]</h4>
+        <label>&nbsp;Given Array : &nbsp;</label> <span id="ex-14-1"></span>
+        <br />
+        <label>&nbsp;Expected Output : &nbsp;</label>
+        <span id="ex-14-2"></span><br />
+        <hr />
+    </div>
+
+    <!-- exercise-15 html tags -->
+    <div class="div-1">
+        <h4>&nbsp;&nbsp;Exercise - 15 [Array - 2]</h4>
+        <button class="btn btn-secondary active btn=lg" onclick="get_elements_15()">Click here to give Array Elements</button>
+        <br />
+        <label>&nbsp;Given Array : &nbsp;</label> <span id="ex-15-1"></span>
+        <br />
+        <label>&nbsp;Sorted Array : &nbsp;</label><span id="ex-15-2"></span>
+        <br /><hr />
+    </div>
+
+    <!-- exercise-16 html tags -->
+    <div class="div-1">
+        <h4>&nbsp;&nbsp;Exercise - 16 [Array - 3]</h4>
+        <button class="btn btn-secondary active btn=lg" onclick="get_elements_16()">Click here to give Array Elements</button>
+        <button class="btn btn-secondary active btn=lg" onclick="remove_duplicate()">Remove Duplicates</button>
+        <br />
+        <label>&nbsp;Given Array : </label> <span id="ex-16-1"></span>
+        <br />
+        <label>&nbsp;Sorted Array : </label><span id="ex-16-2"></span>
+        <br /><hr />
+    </div>
+
+    <!-- exercise-17 html tags -->
+    <div class="div-1">
+        <h4>&nbsp;&nbsp;Exercise - 17 [Array - 4]</h4>
+        <button class="btn btn-secondary" onclick="get_elements_17()">Click here to give Array Elements</button>
+        <button class="btn btn-secondary" onclick="remove_null_zero()">Remove Null and 0</button>
+        <br />
+        <label>&nbsp;Given Array : </label>  <span id="ex-17-1"></span>
+        <br />
+        <label>&nbsp;Sorted Array : </label><span id="ex-17-2"></span>
+        <br /><hr />
+    </div>
+
+    <!--exercise - 18 html tags -->
+    <div class="div-1">
+        <h4>&nbsp;&nbsp;Exercise - 18 [Number of days in a Month]</h4>
+        <button class="btn btn-secondary active btn=lg" onclick="get_input()">Click here to give inputs</button>
+        <br />
+        <label>&nbsp;Month : </label> <span id="ex-18-1"></span>
+        <br />
+        <label>&nbsp;Year : </label> <span id="ex-18-2"></span>
+        <br />
+        <label>&nbsp;Number of days : </label> <span id="ex-18-3"></span>
+        <br /><hr />
+    </div>
+
+    <!--exercise - 19 html tags -->
+    <div class="div-1">
+        <h4>&nbsp;&nbsp;Exercise - 19 [Time Convertion]</h4>
+        <label>&nbsp;Enter Minutes : </label> <input id="hr_txt" type="text" /><br />
+        <br />
+        <button class="btn btn-secondary active btn=lg" onclick="Calculate_minutes()">TIME CONVERTION</button>
+        <br />
+        <label>&nbsp;Time Conversion : </label><span id="ex-19-1"></span>
+        <br /><hr />
+    </div>
+
+    <!--exercise - 20 html tags -->
+    <div class="div-1">
+        <h4>&nbsp;&nbsp;Exercise - 20 [Calculate Age]</h4>
+        <label>&nbsp;Select Birth Date :</label> <input id="b_day_txt" type="date" /><br />
+        <button class="btn btn-secondary active btn=lg" onclick="Calculate_age()">CALCULATE AGE</button>
+        <br />
+        <label>&nbsp;Age : </label> <span id="ex-20-2"></span>
+        <br /><hr />
+    </div>
+</div>
+
+
+<!--exercise-1 script code-->
+<script>
+    const date = new Date();
+    let date_str = "";
+    let date_no = date.getDay();
+    switch (date_no) {
+        case 0:
+            date_str = "Sunday, "; break;
+        case 1:
+            date_str = "Monday, "; break;
+        case 2:
+            date_str = "Tuesday, "; break;
+        case 3:
+            date_str = "Wednesday, "; break;
+        case 4:
+            date_str = "Thursday, "; break;
+        case 5:
+            date_str = "Friday, "; break;
+        case 6:
+            date_str = "Saturday, "; break;
+    }
+    document.querySelector("#day_p").textContent = date_str;
+    var d = date.getDate(); // numeric day [1-31] of specified date
+    var m = date.getMonth() + 1; // returns month [0-11]
+    var y = date.getFullYear();
+    var datestr = (d <= 9 ? '0' + d : d) + '/' + (m <= 9 ? '0' + m : m) + '/' + y;
+    document.querySelector("#date_p").textContent = datestr;
+
+    setInterval(update_Time, 1000);
+    // Thursday, 07/01/2015 13:20:00”.
+    function update_Time() {
+        const time = new Date();
+        document.querySelector("#time_p").textContent = time.toLocaleTimeString();
+    }
+</script>
+
+<!-- exercise-2 script code -->
+<script>
+    function calculate_LeapYr() {
+        let year = Number(document.getElementById('yr_txt').value);
+        if ((year % 4) == 0 && (year % 100) == 0 && (year % 400) == 0)
+            alert("The given year " + year + " is a Leap Year");
+        else if ((year % 4) == 0 && (year % 100) != 0 && (year % 400) != 0)
+            alert("The given year " + year + " is a Leap Year");
+        else
+            alert("The given year " + year + " is not a Leap Year");
+    }
+</script>
+
+<!-- exercise-3 script code -->
+<script>
+    let day, res;
+    function Check_Sunday() {
+        let year = Number(document.getElementById('yr_txt1').value);
+        const date2 = new Date('01-01-' + year);
+        day = date2.getDay();
+        if (day == 0) {
+            res = year + "'s 1'st of January is falls on Sunday!";
+        }
+        else {
+            res = + year + "'s 1'st of January is not falls on Sunday!";
+        }
+        document.querySelector("#result").textContent = res;
+    }
+</script>
+
+<!-- exercise-4 script code -->
+<script>
+    function Check() {
+        let guessed_number = Number(document.getElementById('number1').value);
+        let random_number = Math.floor(Math.random() * 1000) + 1;
+        if (guessed_number == random_number) {
+            document.querySelector("#ex-4").textContent = "Good Job!";
+        }
+        else {
+            document.querySelector("#ex-4").textContent = "Didn't Match";
+            //document.getElementById("#ex-4").style.color = red; 
+        }
+    }
+</script>
+
+<!-- exercise-5 script code -->
+<script>
+    const today_date = new Date();
+    const christ_date = new Date('12-24-2024');
+    var months = christ_date.getMonth() - today_date.getMonth();
+    let days = christ_date.getDate() - today_date.getDate();
+    document.querySelector("#ex-5").textContent = months + " Months " + days + " Days to go!";
+</script>
+
+<!-- exercise-6 script code -->
+<script>
+    function reverse() {
+        let input_str = String(document.getElementById("ex6_txt").value);
+        let output_str = "";
+        for (let i = input_str.length; i >= 0; i--) {
+            output_str = output_str + input_str.charAt(i);
+        }
+        document.querySelector("#ex-6").textContent = output_str;
+    }
+</script>
+
+<!-- exercise-7 script code -->
+<script>
+    // “Text” Expected output: T, Te, Tex, Text, e, ex, ext, x, xt, t
+    function manipulate() {
+        let input_str = String(document.getElementById("ex7_txt").value);
+        let output_str = "";
+        for (let k = 0; k < input_str.length; k++) {
+            for (let i = k; i < input_str.length; i++) {
+                for (let j = k; j <= i; j++) {
+                    output_str = output_str + input_str.charAt(j);
+                }
+                output_str = " " + output_str + ",";
+            }
+        }
+        document.querySelector("#ex-7").textContent = output_str;
+    }
+</script>
+
+<!-- exercise-8 script code -->
+<script>
+    function alpha_order() {
+        let input_str = String(document.getElementById("ex8_txt").value);
+        let output_str = "";
+        let characters = [];
+        for (let c of input_str) {
+            characters.push(c);
+        }
+        characters.sort();
+        document.querySelector("#ex-8").textContent = characters.join("");
+    }
+</script>
+
+<!-- exercise-9 script code -->
+<script>
+    function manipulate_txt() {
+        let input_str = String(document.getElementById("ex9_txt").value);
+        let output_str = "";
+        let str_length = 0, long_word;
+        const word_str = input_str.split(' ');
+        for (let i = 0; i < word_str.length; i++) {
+            output_str = output_str + word_str[i].charAt(0).toUpperCase() +
+                word_str[i].slice(1) + " ";
+            if (str_length < word_str[i].length) {
+                str_length = word_str[i].length;
+                long_word = word_str[i];
+            }
+        }
+        document.querySelector("#ex-9-1").textContent = output_str;
+        document.querySelector("#ex-9-2").textContent = long_word;
+    }
+</script>
+
+<!-- exercise-10 script code -->
+<script>
+    function prime_check() {
+        var flag = false;
+        let input_number = Number(document.getElementById("ex10_txt").value);
+        for (let i = 2; i < input_number; i++) {
+            if (input_number % i == 0) {
+                flag = true;
+            }
+        }
+        if (flag == true) {
+            document.querySelector("#ex-10").textContent = "Not a Prime Number!";
+        }
+        else {
+            document.querySelector("#ex-10").textContent = "Prime Number!";
+        }
+    }
+</script>
+
+<!-- exercise-11 script code -->
+<script>
+    function check_type() {
+        //let input = prompt("Enter a list of elements separated by Space : ");
+        let input = document.getElementById('ex11_txt').value;
+        let result = "";
+        var float_bool, int_bool, string_bool = false;
+        float_bool = input instanceof parseFloat;
+        int_bool = input instanceof parseInt;
+        string_bool = input instanceof parseInt;
+        if (float_bool)
+            result = result + "The Value type is Float";
+        else if (int_bool)
+            result = result + "The Value type is Int";
+        else
+            result = result + "The Value type is String";
+
+        document.querySelector("#ex-11").textContent = result;
+    }
+        
+    
+</script>
+
+<!-- exercise-12 script code -->
+<script>
+    let result="";
+    for (let i = 0; i <= 15; i++) {
+        if (i % 2 == 0) {
+            result = result + i + " is even; ";
+        }
+        else {
+            result = result + i + " is odd; ";
+        }
+    }
+    document.querySelector("#ex-12").textContent = result;
+</script>
+
+<!-- exercise-13 script code -->
+<script>
+    function Find_Happy_Numbers() {
+        var sum, n = 1, temp = 1, sqr, q, count = 1;
+        var Happy_Numbers= [ ];
+        do {
+            do {
+                sum = 0;
+                do {
+                    q = n % 10;
+                    n = Math.floor(n / 10);
+                    sqr = q * q;
+                    sum = sum + sqr;
+                } while (n > 0);
+                n = sum;
+            } while (sum > 9);
+            if (sum == 1) {
+                Happy_Numbers.push(temp) ;
+                count++;
+            }
+            n = ++temp;
+        } while (count <= 10);
+        document.querySelector("#ex-13-1").textContent = Happy_Numbers;
+    }
+</script>
+
+<!-- exercise-14 script code -->
+<script>
+    var workdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+    var expect_str = "";
+    document.querySelector("#ex-14-1").textContent = workdays.toString();
+    for (let x of workdays) {
+        if (workdays[x] == "Thursday") {
+            expect_str = expect_str + workdays[x] + " and ";
+        }
+        else if (workdays[x] == "Friday") {
+            expect_str = expect_str + workdays[x] + " are workdays.";
+        }
+        else {
+            expect_str = expect_str + workdays[x] + ", ";
+        }
+    }
+
+    document.querySelector("#ex-14-2").textContent = expect_str;
+</script>
+
+<!-- exercise-15 script code -->
+<script>
+    function get_elements_15() {
+        let input1 = prompt("Enter a list of elements separated by Space : ");
+        let given_Array = input1.split(" ");
+        let number_Array = [];
+        //alert(given_Array);
+        for (let i = 0; i < given_Array.length; i++) {
+            number_Array[i] = parseInt(given_Array[i]);
+        }
+        //alert(number_Array);
+        document.querySelector("#ex-15-1").textContent = number_Array.join(" |");
+        number_Array.sort(function (a, b) { return a - b });
+        document.querySelector("#ex-15-2").textContent = number_Array;
+    }
+</script>
+
+<!-- exercise-16 script code -->
+<script>
+    function get_elements_16() {
+        let input2 = prompt("Enter a list of elements separated by Space : ");
+        let given_Array = input2.split(" ");
+        document.querySelector("#ex-16-1").textContent = given_Array.join(" ");
+    }
+    function remove_duplicate() {
+        const given_array = document.querySelector("#ex-16-1").textContent.split(" ");
+        for (let i = 0; i < given_array.length; i++) {
+            for (let j = i + 1; j < given_array.length; j++) {
+                if (given_array[i] == given_array[j]) {
+                    delete given_array[j];
+                }
+            }
+        }
+        document.querySelector("#ex-16-2").textContent = given_array.join(" ");
+    }
+</script>
+
+<!-- exercise-17 script code -->
+<script>
+    function get_elements_17() {
+        let input = prompt("Enter a list of elements separated by Comma : ");
+        let given_Array = input.split(",");
+        document.querySelector("#ex-17-1").textContent = given_Array.join("|");
+    }
+    function remove_null_zero() {
+        const given_array = document.querySelector("#ex-17-1").textContent.split("|");
+        for (let i = 0; i < given_array.length; i++) {
+            if (given_array[i] == ' ' || given_array[i] == '0') {
+                delete given_array[i];
+            }
+        }
+        document.querySelector("#ex-17-2").textContent = given_array.join(" ");
+    }
+</script>
+
+<!--exercise - 18 script code -->
+<script>
+    function get_input() {
+        let month = prompt("Enter Month ");
+        let year = prompt("Enter Year ");
+        document.querySelector("#ex-18-2").textContent = year;
+        var flag = false;
+        switch (month.toLowerCase()) {
+            case "january": 
+            case "jan":
+            case "1":
+                document.querySelector("#ex-18-1").textContent = "January";
+                document.querySelector("#ex-18-3").textContent = "31 Days";
+                break;
+            case "april":
+            case "apr":
+            case "4":
+                document.querySelector("#ex-18-1").textContent = "April";
+                document.querySelector("#ex-18-3").textContent = "31 Days";
+                break;
+            case "june":
+            case "jun":
+            case "6":
+                document.querySelector("#ex-18-1").textContent = "June";
+                document.querySelector("#ex-18-3").textContent = "31 Days";
+                break;
+            case "august":
+            case "aug":
+            case "8":
+                document.querySelector("#ex-18-1").textContent = "August";
+                document.querySelector("#ex-18-3").textContent = "31 Days";
+                break;
+            case "october":
+            case "oct":
+            case "10":
+                document.querySelector("#ex-18-1").textContent = "October";
+                document.querySelector("#ex-18-3").textContent = "31 Days";
+                break;
+            case "december":
+            case "dec":
+            case "12":
+                document.querySelector("#ex-18-1").textContent = "December";
+                document.querySelector("#ex-18-3").textContent = "31 Days";
+                break;
+            case "february":
+            case "feb":
+            case "2":
+                document.querySelector("#ex-18-1").textContent = "February";
+                if (year == "1712") {
+                    document.querySelector("#ex-18-3").textContent = "30 Days";
+                }
+                else {
+                    if ((year % 4) == 0 && (year % 100) == 0 && (year % 400) == 0)
+                        flag = true;
+                    else if ((year % 4) == 0 && (year % 100) != 0 && (year % 400) != 0)
+                        flag = true;
+
+                    if (flag == true)
+                        document.querySelector("#ex-18-3").textContent = "29 Days";
+                    else
+                        document.querySelector("#ex-18-3").textContent = "28 Days";
+                }     
+                break;
+            case "march":
+            case "mar":
+            case "3":
+                document.querySelector("#ex-18-1").textContent = "March";
+                document.querySelector("#ex-18-3").textContent = "30 Days";
+                break;
+            case "may":
+            case "may":
+            case "5":
+                document.querySelector("#ex-18-1").textContent = "May";
+                document.querySelector("#ex-18-3").textContent = "30 Days";
+                break;
+            case "july":
+            case "jul":
+            case "7":
+                document.querySelector("#ex-18-1").textContent = "July";
+                document.querySelector("#ex-18-3").textContent = "30 Days";
+                break;
+            case "september":
+            case "sep":
+            case "9":
+                document.querySelector("#ex-18-1").textContent = "September";
+                document.querySelector("#ex-18-3").textContent = "30 Days";
+                break;
+            case "november":
+            case "nov":
+            case "11":
+                document.querySelector("#ex-18-1").textContent = "November";
+                document.querySelector("#ex-18-3").textContent = "30 Days";
+                break;
+        }
+    }
+</script>
+
+<!--exercise - 19 script code -->
+<script>
+    function Calculate_minutes() {
+        const time = Number(document.querySelector("#hr_txt").value);
+        let hour = Math.floor(time / 60);
+        let minutes = time % 60;
+        document.querySelector("#ex-19-1").textContent = hour + " hour(s) " +
+            minutes + " minute(s)";
+    }
+</script>
+
+<!--exercise - 20 script code -->
+<script>
+    function Calculate_age() {
+        const year = document.querySelector("#b_day_txt").value;
+        const year1 = year.split("-");
+        const date3 = new Date();
+        let current_yr = date.getFullYear();
+        let age = current_yr - year1[0];
+        if (date3.getMonth() < year1[1] ||
+            (date3.getMonth() == year1[1] && date3.getDay() < year1[3])) {
+            age--;
+        }
+        document.querySelector("#ex-20-2").textContent = age + " years old";
+    }
+</script>
+
+</body>
+</html >
